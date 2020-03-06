@@ -58,20 +58,20 @@ btn6.click(function () {
     })
 });
 
-btn7.click(function () {
-    $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
-    })
-});
+// btn7.click(function () {
+//     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
+//         console.log(response)
+//     })
+// });
 
-btn8.click(function () {
-    $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
-    })
-});
+// btn8.click(function () {
+//     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
+//         console.log(response)
+//     })
+// });
 
-btn9.click(function () {
-    $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
-    })
-});
+// btn9.click(function () {
+//     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
+//         console.log(response)
+//     })
+// });
