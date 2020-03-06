@@ -77,11 +77,15 @@ btn7.click(function() {
   });
 });
 
-// btn8.click(function () {
-//     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-//         console.log(response)
-//     })
-// });
+btn8.click(function () {
+    $.ajax({
+        method: 'DELETE',
+        url: 'http://jsonplaceholder.typicode.com/posts/12',
+        complete: function(response){
+            console.log(response.statusText);
+        }
+    })
+});
 
 // btn9.click(function () {
 //     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
