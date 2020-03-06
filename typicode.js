@@ -11,54 +11,54 @@ const textbox = $('#textbox')
 
 btn1.click(function () {
     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
+        textbox.text(response)
     })
 });
 
 btn2.click(function () {
     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
+        textbox.text(response)
     })
 });
 
 btn3.click(function () {
     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
+        textbox.text(response)
     })
 });
 
 btn4.click(function () {
     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
+        textbox.text(response)
     })
 });
 
 btn5.click(function () {
     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
+        textbox.text(response)
     })
 });
 
 btn6.click(function () {
     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
+        textbox.text(response)
     })
 });
 
 btn7.click(function () {
     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
+        textbox.text(response)
     })
 });
 
 btn8.click(function () {
     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
+        textbox.text(response)
     })
 });
 
 btn9.click(function () {
     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
+        textbox.text(response)
     })
 });
