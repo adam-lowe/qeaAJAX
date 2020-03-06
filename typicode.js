@@ -16,28 +16,31 @@ btn1.click(function () {
 });
 
 btn2.click(function () {
-    $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
+    $.get('https://jsonplaceholder.typicode.com/post/10', function(response) {
         console.log(response)
     })
 });
 
 btn3.click(function () {
-    $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
+    $.get('https://jsonplaceholder.typicode.com/post/12/comments', function(response) {
         console.log(response)
     })
 });
 
 btn4.click(function () {
-    $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
+    $.get('https://jsonplaceholder.typicode.com/user/2/posts', function(response) {
         console.log(response)
     })
 });
 
 btn5.click(function () {
-    $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
+    $.post('https://jsonplaceholder.typicode.com/posts',{
+        userId: 1,
+        title: "new post",
+        body: "new body"
+    }, function(response){
+        console.log(response.id)
     })
-});
 
 btn6.click(function () {
     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
