@@ -16,13 +16,13 @@ btn1.click(function () {
 });
 
 btn2.click(function () {
-    $.get('https://jsonplaceholder.typicode.com/post/10', function(response) {
+    $.get('https://jsonplaceholder.typicode.com/posts/10', function(response) {
         console.log(response)
     })
 });
 
 btn3.click(function () {
-    $.get('https://jsonplaceholder.typicode.com/post/12/comments', function(response) {
+    $.get('https://jsonplaceholder.typicode.com/posts/12/comments', function(response) {
         console.log(response)
     })
 });
