@@ -86,9 +86,3 @@ btn8.click(function () {
         }
     })
 });
-
-// btn9.click(function () {
-//     $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-//         console.log(response)
-//     })
-// });
