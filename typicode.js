@@ -41,10 +41,20 @@ btn5.click(function () {
     }, function(response){
         console.log(response.id)
     })
+});
 
 btn6.click(function () {
-    $.get('https://jsonplaceholder.typicode.com/posts', function(response) {
-        console.log(response)
+    $.ajax({
+        method: 'PUT',
+        url: 'http://jsonplaceholder.typicode.com/posts/12',
+        data: {
+            userId: 1,
+            title: "new post",
+            body: "new body"
+        },
+        complete: function(response){
+            console.log(response.responseJSON);
+        }
     })
 });
 
