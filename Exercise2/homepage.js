@@ -1,7 +1,9 @@
 $(document).ready(function(){
     let currentUser
+    let currentUserId
     if (localStorage.getItem("user")) {
        currentUser = localStorage.getItem("user")
+       currentUserId = localStorage.getItem("userId")
     }
     else {
         window.location = 'index.html'
