@@ -1,6 +1,12 @@
 const userField = $("#userField");
 const submit = $("#submit")
 
+$(document).ready(function(){
+  if (localStorage.getItem("user")) {
+    window.location = 'homepage.html'
+  }
+});
+
 
 submit.click(function (e) { 
     e.preventDefault();
