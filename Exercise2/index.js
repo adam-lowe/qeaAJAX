@@ -14,6 +14,7 @@ submit.click(function (e) {
             for (var i=0; i < data.length; i++) {
                 if (data[i].username === userField.val()) {
                     console.log("Match!")
+                    localStorage.setItem("user", userField.val());
                     window.location = 'homepage.html'
                     return data[i];
                 }
