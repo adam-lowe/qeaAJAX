@@ -13,5 +13,6 @@ $(document).ready(function(){
 
   $("#logOut").click(function () { 
     localStorage.removeItem("user");
+    localStorage.removeItem("userId");
     location.reload();
   });
