@@ -7,7 +7,7 @@ $(document).ready(function() {
   } else {
     window.location = "index.html";
   }
-  $("span").text(currentUser);
+  $(".currentUser").text(currentUser);
 
   fetch(`https://jsonplaceholder.typicode.com/users/${currentUserId}/posts`)
     .then(response => {
@@ -46,6 +46,7 @@ $(document).ready(function() {
                 return response.json();
               })
               .then((data) => {
+                $("#postModal").modal()
                 console.log(data[postId]);
               });
         }
