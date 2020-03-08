@@ -68,8 +68,32 @@ $(document).ready(function() {
     });
     $("#albums").click(function (event) {
       if (event.target.id !== "album") {
+        let albumTitle
         let albumIndex = (event.target.id).replace('album','');
         fetch(`https://jsonplaceholder.typicode.com/users/${currentUserId}/albums`)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          let album = data[albumIndex]
+          $("#aTitle").text(album.title)
+          $('#albumModal').modal();
+          console.log(album);
+          return fetch(`https://jsonplaceholder.typicode.com/albums/${album.id}/photos`);
+        })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          $("#aBody").empty()
+          data.forEach(function(item, index) {
+            $("#aBody").append(`
+              <p>${item.title}</p>
+              <img src="${item.thumbnailUrl}">
+            `);
+          });
+          console.log(data);
+        });
       }
     });
 });
