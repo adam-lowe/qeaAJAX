@@ -13,9 +13,11 @@ $(document).ready(function() {
     localStorage.removeItem("userId");
     location.reload();
   });
-  $("#photoSearch").change(function(e) {
-    e.preventDefault();
-    $("#aBody").filter($("#photoSearch").val());
+  $("#photoSearch").on("keyup", function () {
+    let value = $(this).val().toLowerCase();
+    $("#aBody div").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
   });
   fetch(`https://jsonplaceholder.typicode.com/users/${currentUserId}/posts`)
     .then(response => {
