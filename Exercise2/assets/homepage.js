@@ -36,6 +36,10 @@ $(document).ready(function() {
       localStorage.removeItem("userId");
       location.reload();
     });
+    $("#photoSearch").change(function (e) { 
+      e.preventDefault();
+      
+    });
     
     $("#posts").click(function (event) {
         if (event.target.id !== "posts") {
