@@ -1,7 +1,7 @@
 $(document).ready(function() {
   let currentUser;
   let currentUserId;
-  if (localStorage.getItem("user")) {
+  if (localStorage.getItem("user") && localStorage.getItem("userId")) {
     currentUser = localStorage.getItem("user");
     currentUserId = localStorage.getItem("userId");
   } else {

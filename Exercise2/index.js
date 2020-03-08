@@ -2,7 +2,7 @@ const userField = $("#userField");
 const submit = $("#submit")
 
 $(document).ready(function(){
-  if (localStorage.getItem("user")) {
+  if (localStorage.getItem("user") && localStorage.getItem("userId")) {
     window.location = 'homepage.html'
   }
 });
