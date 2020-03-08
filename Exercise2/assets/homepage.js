@@ -46,8 +46,11 @@ $(document).ready(function() {
                 return response.json();
               })
               .then((data) => {
+                let post = data[postId]
+                $(".modal-title").text(post.title)
+                $(".modal-body").text(post.body)
                 $("#postModal").modal()
-                console.log(data[postId]);
+                console.log(post);
               });
         }
     });
