@@ -39,23 +39,38 @@ $(document).ready(function() {
     
     $("#posts").click(function (event) {
         if (event.target.id !== "posts") {
-            let postId = (event.target.id).replace('post','');
+            let postIndex = (event.target.id).replace('post','');
             
              fetch(`https://jsonplaceholder.typicode.com/users/${currentUserId}/posts`)
               .then((response) => {
                 return response.json();
               })
               .then((data) => {
-                let post = data[postId]
-                $(".modal-title").text(post.title)
-                $(".modal-body").text(post.body)
-                $("#postModal").modal()
+                let post = data[postIndex]
+                $("#pTitle").text(post.title)
+                $("#pBody").text(post.body)
                 console.log(post);
-              });
+                $("#postModal").modal()
+                return fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`);
+              })
+              .then((response) => {
+                return response.json();
+              })
+              .then((data) => {
+                data.forEach(function(item, index) {
+                  $("#pComments").append(`
+                     <li id="comment${index}">${item.body}</li>
+                  `);
+                });
+                console.log(data)
+              })
         }
     });
     $("#albums").click(function (event) {
-        alert(event.target.id)
+      if (event.target.id !== "album") {
+        let albumIndex = (event.target.id).replace('album','');
+        fetch(`https://jsonplaceholder.typicode.com/users/${currentUserId}/albums`)
+      }
     });
 });
 
