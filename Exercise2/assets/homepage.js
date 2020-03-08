@@ -16,7 +16,7 @@ $(document).ready(function() {
     .then(data => {
       data.forEach(function(item, index) {
         $("#posts").append(`
-           <li id="post${index+1}">${item.title}</li>
+           <li id="post${index}">${item.title}</li>
         `);
       });
     });
@@ -27,14 +27,31 @@ $(document).ready(function() {
     .then(data => {
       data.forEach(function(item, index) {
         $("#albums").append(`
-           <li id="album${index+1}">${item.title}</li>
+           <li id="album${index}">${item.title}</li>
         `);
       });
     });
+    $("#logOut").click(function() {
+      localStorage.removeItem("user");
+      localStorage.removeItem("userId");
+      location.reload();
+    });
+    
+    $("#posts").click(function (event) {
+        if (event.target.id !== "posts") {
+            let postId = (event.target.id).replace('post','');
+            
+             fetch(`https://jsonplaceholder.typicode.com/users/${currentUserId}/posts`)
+              .then((response) => {
+                return response.json();
+              })
+              .then((data) => {
+                console.log(data[postId]);
+              });
+        }
+    });
+    $("#albums").click(function (event) {
+        alert(event.target.id)
+    });
 });
 
-$("#logOut").click(function() {
-  localStorage.removeItem("user");
-  localStorage.removeItem("userId");
-  location.reload();
-});
